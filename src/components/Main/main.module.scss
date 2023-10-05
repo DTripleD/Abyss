@@ -1,0 +1,93 @@
+.wrapper {
+  width: 100%;
+  height: calc(100vh - 8.5rem);
+  position: relative;
+  overflow: hidden;
+
+  &:hover {
+    cursor: all-scroll;
+  }
+}
+
+.arrowTop {
+  background-color: #ccc;
+  position: absolute;
+  width: 8.6875rem;
+  height: 3rem;
+  top: 0;
+  left: calc(50% - 4.375rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  user-select: none;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.arrowBottom {
+  background-color: #ccc;
+  position: absolute;
+  width: 8.6875rem;
+  height: 3rem;
+  bottom: 0;
+  left: calc(50% - 4.375rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  user-select: none;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.arrowLeft {
+  background-color: #ccc;
+  position: absolute;
+  height: 8.6875rem;
+  width: 3rem;
+  left: 0;
+  top: calc(50% - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  user-select: none;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.arrowRight {
+  background-color: #ccc;
+  position: absolute;
+  height: 8.6875rem;
+  width: 3rem;
+  right: 0;
+  top: calc(50% - 4rem);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 3;
+  user-select: none;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}
+
+.draggable {
+  padding-top: 6.25rem;
+  width: max-content;
+  position: relative;
+  left: calc(50% - 4.4375rem);
+}
