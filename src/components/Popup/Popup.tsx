@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./styles.module.scss";
+import styles from "./Popup.module.scss";
 
 interface PopupProps {
   onCategoryClick: () => void;

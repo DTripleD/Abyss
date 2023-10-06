@@ -1,6 +1,6 @@
 import "./App.css";
-import Head from "./components/Head";
-import Main from "./components/Main";
+import Head from "./components/Head/Head";
+import Main from "./components/Main/Main";
 import { useState } from "react";
 import { Position } from "./components/Main/types";
 

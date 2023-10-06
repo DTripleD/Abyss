@@ -1,12 +1,10 @@
 import React, { useState, useEffect } from "react";
 import styles from "./categories.module.scss";
-import plus from "../../images/plus.png";
-import orangeCross from "../../images/orange cross.png";
 import tick from "../../images/tick.png";
 import edit from "../../images/something.png";
-import redCross from "../../images/red cross.png";
 import { vars, categoriesInterface } from "./types";
-import Popup from "../Popup";
+import Popup from "../Popup/Popup";
+import icons from "../../images/icons.svg";
 
 interface SubCategoryProps {
   subCategories: categoriesInterface[] | undefined;
@@ -97,7 +95,9 @@ const SubCategory: React.FC<SubCategoryProps> = ({
                     removeSubCategory(subCategory.id, subCategory.parent)
                   }
                 >
-                  <img src={orangeCross} alt="remove" />
+                  <svg width="15" height="15">
+                    <use href={icons + "#icon-cancel-circle-orange"}></use>
+                  </svg>
                 </button>
                 <button
                   className={styles.add}
@@ -148,7 +148,9 @@ const SubCategory: React.FC<SubCategoryProps> = ({
                       : setDisplayPopup(subCategory.id);
                   }}
                 >
-                  <img src={plus} alt="add" />
+                  <svg width="15" height="15">
+                    <use href={icons + "#icon-arrow-left"}></use>
+                  </svg>
                 </button>
                 <button
                   className={styles.add}
@@ -163,7 +165,9 @@ const SubCategory: React.FC<SubCategoryProps> = ({
                     removeSubCategory(subCategory.id, subCategory.parent)
                   }
                 >
-                  <img src={redCross} alt="remove" />
+                  <svg width="15" height="15">
+                    <use href={icons + "#icon-cancel-circle-red"}></use>
+                  </svg>
                 </button>
               </div>
 

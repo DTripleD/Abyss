@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import styles from "./head.module.scss";
-import telegramIamge from "../../images/telegram arrow.png";
+import styles from "./Head.module.scss";
 import tick2 from "../../images/tick2.png";
 import { Position } from "../Main/types";
+import icons from "../../images/icons.svg";
 
 interface HeadProps {
   scale: number;
@@ -58,7 +58,9 @@ const Head: React.FC<HeadProps> = ({
             });
           }}
         >
-          <img src={telegramIamge} alt="go to center" />
+          <svg width="15" height="15">
+            <use href={icons + "#icon-compass"}></use>
+          </svg>
 
           {displayTooltip && (
             <div className={styles.tooltipWrapper}>

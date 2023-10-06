@@ -1,13 +1,10 @@
 import React, { useState } from "react";
-import styles from "./categories.module.scss";
-import plus from "../../images/plus.png";
-import orangeCross from "../../images/orange cross.png";
+import styles from "./Categories.module.scss";
 import tick from "../../images/tick.png";
 import edit from "../../images/something.png";
-import redCross from "../../images/red cross.png";
 import SubCategory from "./SubCategory";
 import { vars, categoriesInterface } from "./types";
-import Popup from "../Popup";
+import Popup from "../Popup/Popup";
 import icons from "../../images/icons.svg";
 
 function findCategoryById(
@@ -211,7 +208,9 @@ const Categories: React.FC<CategoriesProps> = ({
                     className={styles.add}
                     onClick={() => removeCategory(category.id)}
                   >
-                    <img src={orangeCross} alt="remove" />
+                    <svg width="15" height="15">
+                      <use href={icons + "#icon-cancel-circle-orange"}></use>
+                    </svg>
                   </button>
                   <button
                     className={styles.add}
@@ -254,7 +253,9 @@ const Categories: React.FC<CategoriesProps> = ({
                         : setDisplayPopup(category.id)
                     }
                   >
-                    <img src={plus} alt="add" />
+                    <svg width="15" height="15">
+                      <use href={icons + "#icon-plus"}></use>
+                    </svg>
                   </button>
                   <button
                     className={styles.add}
@@ -267,7 +268,9 @@ const Categories: React.FC<CategoriesProps> = ({
                     className={styles.add}
                     onClick={() => removeCategory(category.id)}
                   >
-                    <img src={redCross} alt="remove" />
+                    <svg width="15" height="15">
+                      <use href={icons + "#icon-cancel-circle-red"}></use>
+                    </svg>
                   </button>
                 </div>
 

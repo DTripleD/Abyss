@@ -1,12 +1,9 @@
 import React, { useState, MouseEvent, useRef, useEffect } from "react";
-import styles from "./main.module.scss";
-import arrowLeft from "../../images/arrow left.png";
-import arrowRight from "../../images/arrow right.png";
-import arrowUp from "../../images/arrow up.png";
-import arrowDown from "../../images/arrow down.png";
-import Categories from "../Categories";
-import { Position } from "./types";
+import styles from "./Main.module.scss";
+import Categories from "../Categories/Categories";
 import { categoriesInterface } from "../Categories/types";
+import icons from "../../images/icons.svg";
+import { Position } from "./types";
 
 interface MainProps {
   scale: number;
@@ -56,16 +53,24 @@ const Main: React.FC<MainProps> = ({
   return (
     <div className={styles.wrapper} onMouseLeave={() => setIsDragging(false)}>
       <div className={styles.arrowTop}>
-        <img src={arrowUp} alt="top" />
+        <svg width="15" height="15">
+          <use href={icons + "#icon-arrow-up"}></use>
+        </svg>
       </div>
       <div className={styles.arrowBottom}>
-        <img src={arrowDown} alt="bottom" />
+        <svg width="15" height="15">
+          <use href={icons + "#icon-arrow-down"}></use>
+        </svg>
       </div>
       <div className={styles.arrowLeft}>
-        <img src={arrowLeft} alt="left" />
+        <svg width="15" height="15">
+          <use href={icons + "#icon-arrow-left"}></use>
+        </svg>
       </div>
       <div className={styles.arrowRight}>
-        <img src={arrowRight} alt="right" />
+        <svg width="15" height="15">
+          <use href={icons + "#icon-arrow-right"}></use>
+        </svg>
       </div>
       <div
         className={styles.draggable}
