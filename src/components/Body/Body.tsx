@@ -1,7 +1,7 @@
 import React, { useState, MouseEvent, useRef, useEffect } from "react";
 import css from "./Body.module.scss";
-import Categories from "../Categories/Categories";
-import { categoriesInterface } from "../Categories/types";
+import Category from "../Category/Category";
+import { categoriesInterface } from "../Category/types";
 import icons from "../../images/icons.svg";
 import { Position } from "./types";
 
@@ -84,7 +84,7 @@ const Body: React.FC<BodyProps> = ({
           setIsDragging(false);
         }}
       >
-        <Categories categories={categories} setCategories={setCategories} />
+        <Category categories={categories} setCategories={setCategories} />
       </div>
     </div>
   );
