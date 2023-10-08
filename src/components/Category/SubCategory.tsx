@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import css from "./categories.module.scss";
+import css from "./Category.module.scss";
 import { vars, categoriesInterface } from "./types";
 import Popup from "../Popup/Popup";
 import icons from "../../images/icons.svg";
