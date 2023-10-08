@@ -1,5 +1,5 @@
 import React, { useState, MouseEvent, useRef, useEffect } from "react";
-import styles from "./Main.module.scss";
+import css from "./Main.module.scss";
 import Categories from "../Categories/Categories";
 import { categoriesInterface } from "../Categories/types";
 import icons from "../../images/icons.svg";
@@ -51,29 +51,29 @@ const Main: React.FC<MainProps> = ({
   }, [draggableElementRef, categories]);
 
   return (
-    <div className={styles.wrapper} onMouseLeave={() => setIsDragging(false)}>
-      <div className={styles.arrowTop}>
+    <div className={css.wrapper} onMouseLeave={() => setIsDragging(false)}>
+      <div className={css.arrowTop}>
         <svg width="15" height="15">
           <use href={icons + "#icon-arrow-up"}></use>
         </svg>
       </div>
-      <div className={styles.arrowBottom}>
+      <div className={css.arrowBottom}>
         <svg width="15" height="15">
           <use href={icons + "#icon-arrow-down"}></use>
         </svg>
       </div>
-      <div className={styles.arrowLeft}>
+      <div className={css.arrowLeft}>
         <svg width="15" height="15">
           <use href={icons + "#icon-arrow-left"}></use>
         </svg>
       </div>
-      <div className={styles.arrowRight}>
+      <div className={css.arrowRight}>
         <svg width="15" height="15">
           <use href={icons + "#icon-arrow-right"}></use>
         </svg>
       </div>
       <div
-        className={styles.draggable}
+        className={css.draggable}
         onMouseMove={handleMouseMove}
         style={{
           transform: `translate(${elementPosition.x}px, ${elementPosition.y}px) scale(${scale})`,

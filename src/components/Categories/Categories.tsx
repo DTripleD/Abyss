@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import styles from "./Categories.module.scss";
+import css from "./Categories.module.scss";
 import SubCategory from "./SubCategory";
 import { vars, categoriesInterface } from "./types";
 import Popup from "../Popup/Popup";
@@ -177,41 +177,41 @@ const Categories: React.FC<CategoriesProps> = ({
   };
 
   return (
-    <div className={styles.topWrapper}>
-      <div className={styles.categoriesWrapper}>
-        <p className={styles.text}>Categories</p>
-        <button className={styles.add} onClick={addCategory}>
+    <div className={css.topWrapper}>
+      <div className={css.categoriesWrapper}>
+        <p className={css.text}>Categories</p>
+        <button className={`${css.add} ${css.plus}`} onClick={addCategory}>
           <svg width="15" height="15">
             <use href={icons + "#icon-plus"}></use>
           </svg>
         </button>
       </div>
 
-      <div className={styles.categories}>
+      <div className={css.categories}>
         {categories.map((category: categoriesInterface) => {
           if (category.type === vars.input) {
             return (
-              <div key={category.id} className={styles.subCategoriesWrapper}>
-                <div className={styles.categoryWrapper}>
+              <div key={category.id} className={css.subCategoriesWrapper}>
+                <div className={css.categoryWrapper}>
                   <input
                     type="text"
                     placeholder="Category name"
                     value={category.name}
-                    className={styles.input}
+                    className={css.input}
                     onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                       changeCategoryName(category.id, e.target.value)
                     }
                   />{" "}
                   <button
-                    className={styles.add}
+                    className={`${css.add} ${css.cancel_orange}`}
                     onClick={() => removeCategory(category.id)}
                   >
                     <svg width="15" height="15">
-                      <use href={icons + "#icon-cancel-circle-orange"}></use>
+                      <use href={icons + "#icon-cross"}></use>
                     </svg>
                   </button>
                   <button
-                    className={styles.add}
+                    className={`${css.add} ${css.checkmark}`}
                     onClick={() => changeType(category.id)}
                   >
                     <svg width="15" height="15">
@@ -220,7 +220,7 @@ const Categories: React.FC<CategoriesProps> = ({
                   </button>
                 </div>
                 {category.subCategories?.length ? (
-                  <div className={styles.categories}>
+                  <div className={css.categories}>
                     {category.subCategories.map(
                       (category: categoriesInterface) => (
                         <SubCategory
@@ -242,11 +242,11 @@ const Categories: React.FC<CategoriesProps> = ({
             );
           } else {
             return (
-              <div key={category.id} className={styles.subCategoriesWrapper}>
-                <div className={styles.categoryWrapper}>
-                  <p className={styles.categoryName}>{category.name}</p>
+              <div key={category.id} className={css.subCategoriesWrapper}>
+                <div className={css.categoryWrapper}>
+                  <p className={css.categoryName}>{category.name}</p>
                   <button
-                    className={styles.add}
+                    className={css.add}
                     onClick={() =>
                       category.subCategories.length
                         ? addSubCategory(category.id)
@@ -258,7 +258,7 @@ const Categories: React.FC<CategoriesProps> = ({
                     </svg>
                   </button>
                   <button
-                    className={styles.add}
+                    className={css.add}
                     onClick={() => changeType(category.id)}
                   >
                     <svg width="15" height="15">
@@ -267,17 +267,17 @@ const Categories: React.FC<CategoriesProps> = ({
                   </button>
 
                   <button
-                    className={styles.add}
+                    className={`${css.add} ${css.cross_red}`}
                     onClick={() => removeCategory(category.id)}
                   >
                     <svg width="15" height="15">
-                      <use href={icons + "#icon-cancel-circle-red"}></use>
+                      <use href={icons + "#icon-cross"}></use>
                     </svg>
                   </button>
                 </div>
 
                 {category.subCategories?.length ? (
-                  <div className={styles.categories}>
+                  <div className={css.categories}>
                     <SubCategory
                       subCategories={category.subCategories}
                       changeSubCategoryName={changeSubCategoryName}

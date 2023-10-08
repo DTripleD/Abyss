@@ -1,7 +1,7 @@
 import React, { useState } from "react";
-import styles from "./Head.module.scss";
 import { Position } from "../Main/types";
 import icons from "../../images/icons.svg";
+import css from "./Head.module.scss";
 
 interface HeadProps {
   scale: number;
@@ -36,17 +36,17 @@ const Head: React.FC<HeadProps> = ({
   };
 
   return (
-    <div className={styles.wrapper}>
-      <div className={styles.leftSide}>
-        <p className={styles.leftText}>Services</p>
-        <p className={styles.amount}>0</p>
+    <div className={css.wrapper}>
+      <div className={css.leftSide}>
+        <p className={css.leftText}>Services</p>
+        <p className={css.amount}>0</p>
       </div>
-      <div className={styles.rightSide}>
-        <button className={styles.coloredButton} type="button">
+      <div className={css.rightSide}>
+        <button className={css.coloredButton} type="button">
           <p>list view</p>
         </button>
         <button
-          className={styles.rightButtonWithImage}
+          className={css.rightButtonWithImage}
           type="button"
           onMouseEnter={() => setDisplayTooltip(true)}
           onMouseLeave={() => setDisplayTooltip(false)}
@@ -62,34 +62,30 @@ const Head: React.FC<HeadProps> = ({
           </svg>
 
           {displayTooltip && (
-            <div className={styles.tooltipWrapper}>
-              <p className={styles.tooltip}>Go to center</p>
+            <div className={css.tooltipWrapper}>
+              <p className={css.tooltip}>Go to center</p>
             </div>
           )}
         </button>
 
-        <button
-          className={styles.rightButton}
-          type="button"
-          onClick={minusSize}
-        >
+        <button className={css.rightButton} type="button" onClick={minusSize}>
           <p>-</p>
         </button>
 
-        <div className={styles.dropdownWrapper}>
+        <div className={css.dropdownWrapper}>
           <button
             type="button"
-            className={styles.rightMiddleButton}
+            className={css.rightMiddleButton}
             onClick={() => setDisplayDropDown(true)}
           >
             <p>{scale * 100}%</p>
           </button>
 
           {displayDropDown && (
-            <div className={styles.dropdown}>
+            <div className={css.dropdown}>
               {scaleVars.map((el: number) => (
                 <button
-                  className={styles.option}
+                  className={css.option}
                   type="button"
                   onClick={() => {
                     setDisplayDropDown(false);
@@ -107,7 +103,7 @@ const Head: React.FC<HeadProps> = ({
             </div>
           )}
         </div>
-        <button className={styles.rightButton} type="button" onClick={plusSize}>
+        <button className={css.rightButton} type="button" onClick={plusSize}>
           <p>+</p>
         </button>
       </div>

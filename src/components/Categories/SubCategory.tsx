@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import styles from "./categories.module.scss";
+import css from "./categories.module.scss";
 import { vars, categoriesInterface } from "./types";
 import Popup from "../Popup/Popup";
 import icons from "../../images/icons.svg";
@@ -72,33 +72,33 @@ const SubCategory: React.FC<SubCategoryProps> = ({
   }, [lastId, colors]);
 
   return (
-    <div className={styles.categories}>
+    <div className={css.categories}>
       {subCategories?.map((subCategory: categoriesInterface) => {
         if (subCategory.type === vars.input) {
           return (
-            <div className={styles.subCategoriesWrapper} key={subCategory.id}>
-              <div className={styles.categoryWrapper}>
+            <div className={css.subCategoriesWrapper} key={subCategory.id}>
+              <div className={css.categoryWrapper}>
                 <input
                   type="text"
                   placeholder="Subcategory name"
                   value={subCategory.name}
-                  className={styles.input}
+                  className={css.input}
                   onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
                     changeSubCategoryName(subCategory.id, e.target.value)
                   }
                 />{" "}
                 <button
-                  className={styles.add}
+                  className={`${css.add} ${css.cross_red}`}
                   onClick={() =>
                     removeSubCategory(subCategory.id, subCategory.parent)
                   }
                 >
                   <svg width="15" height="15">
-                    <use href={icons + "#icon-cancel-circle-orange"}></use>
+                    <use href={icons + "#icon-cross"}></use>
                   </svg>
                 </button>
                 <button
-                  className={styles.add}
+                  className={`${css.add} ${css.checkmark}`}
                   onClick={() => changeSybCategoryType(subCategory.id)}
                 >
                   <svg width="15" height="15">
@@ -108,7 +108,7 @@ const SubCategory: React.FC<SubCategoryProps> = ({
               </div>
 
               {subCategory.subCategories?.length ? (
-                <div className={styles.categories}>
+                <div className={css.categories}>
                   <SubCategory
                     subCategories={subCategory.subCategories}
                     changeSubCategoryName={changeSubCategoryName}
@@ -127,13 +127,13 @@ const SubCategory: React.FC<SubCategoryProps> = ({
         } else {
           return (
             <div
-              className={styles.subCategoriesWrapper}
+              className={css.subCategoriesWrapper}
               key={subCategory.id}
               onMouseEnter={() => findLevel(subCategory.id)}
             >
-              <div className={styles.categoryWrapper}>
+              <div className={css.categoryWrapper}>
                 <p
-                  className={styles.subCategoryName}
+                  className={css.subCategoryName}
                   style={{
                     backgroundColor: colors[findLevel(subCategory.id) || 1],
                   }}
@@ -141,7 +141,7 @@ const SubCategory: React.FC<SubCategoryProps> = ({
                   {subCategory.name}
                 </p>
                 <button
-                  className={styles.add}
+                  className={css.add}
                   onClick={() => {
                     subCategory.subCategories.length
                       ? addSubCategory(subCategory.id)
@@ -153,7 +153,7 @@ const SubCategory: React.FC<SubCategoryProps> = ({
                   </svg>
                 </button>
                 <button
-                  className={styles.add}
+                  className={css.add}
                   onClick={() => changeSybCategoryType(subCategory.id)}
                 >
                   <svg width="15" height="15">
@@ -162,19 +162,19 @@ const SubCategory: React.FC<SubCategoryProps> = ({
                 </button>
 
                 <button
-                  className={styles.add}
+                  className={`${css.add} ${css.cross_red}`}
                   onClick={() =>
                     removeSubCategory(subCategory.id, subCategory.parent)
                   }
                 >
                   <svg width="15" height="15">
-                    <use href={icons + "#icon-cancel-circle-red"}></use>
+                    <use href={icons + "#icon-cross"}></use>
                   </svg>
                 </button>
               </div>
 
               {subCategory.subCategories?.length ? (
-                <div className={styles.categories}>
+                <div className={css.categories}>
                   <SubCategory
                     subCategories={subCategory.subCategories}
                     changeSubCategoryName={changeSubCategoryName}

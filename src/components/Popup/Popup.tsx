@@ -1,5 +1,5 @@
 import React from "react";
-import styles from "./Popup.module.scss";
+import css from "./Popup.module.scss";
 
 interface PopupProps {
   onCategoryClick: () => void;
@@ -7,17 +7,17 @@ interface PopupProps {
 
 const Popup: React.FC<PopupProps> = ({ onCategoryClick }) => {
   return (
-    <div className={styles.popup}>
-      <p className={styles.popupHeader}>What do you want to create?</p>
-      <div className={styles.popupButtonsWrapper}>
+    <div className={css.popup}>
+      <p className={css.popupHeader}>What do you want to create?</p>
+      <div className={css.popupButtonsWrapper}>
         <button
           type="button"
-          className={styles.popupButton}
+          className={css.popupButton}
           onClick={onCategoryClick}
         >
           Category
         </button>
-        <button type="button" className={styles.popupButton}>
+        <button type="button" className={css.popupButton}>
           Service
         </button>
       </div>
