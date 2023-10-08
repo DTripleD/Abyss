@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Position } from "../Main/types";
 import icons from "../../images/icons.svg";
-import css from "./Head.module.scss";
+import css from "./Header.module.scss";
 
 interface HeadProps {
   scale: number;
