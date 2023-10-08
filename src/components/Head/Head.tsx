@@ -85,6 +85,7 @@ const Head: React.FC<HeadProps> = ({
             <div className={css.dropdown}>
               {scaleVars.map((el: number) => (
                 <button
+                  key={el}
                   className={css.option}
                   type="button"
                   onClick={() => {
