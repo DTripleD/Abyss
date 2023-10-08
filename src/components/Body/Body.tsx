@@ -1,18 +1,18 @@
 import React, { useState, MouseEvent, useRef, useEffect } from "react";
-import css from "./Main.module.scss";
+import css from "./Body.module.scss";
 import Categories from "../Categories/Categories";
 import { categoriesInterface } from "../Categories/types";
 import icons from "../../images/icons.svg";
 import { Position } from "./types";
 
-interface MainProps {
+interface BodyProps {
   scale: number;
   elementPosition: Position;
   setElementPosition: (value: Position) => void;
   setElementWidth: (value: number) => void;
 }
 
-const Main: React.FC<MainProps> = ({
+const Body: React.FC<BodyProps> = ({
   scale,
   elementPosition,
   setElementPosition,
@@ -90,4 +90,4 @@ const Main: React.FC<MainProps> = ({
   );
 };
 
-export default Main;
+export default Body;

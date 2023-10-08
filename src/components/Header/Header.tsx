@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Position } from "../Main/types";
+import { Position } from "../Body/types";
 import icons from "../../images/icons.svg";
 import css from "./Header.module.scss";
 

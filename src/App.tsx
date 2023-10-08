@@ -1,8 +1,8 @@
 import "./App.css";
 import Header from "./components/Header/Header";
-import Main from "./components/Main/Main";
+import Body from "./components/Body/Body";
 import { useState } from "react";
-import { Position } from "./components/Main/types";
+import { Position } from "./components/Body/types";
 
 const scaleVars: number[] = [
   0.25, 0.3, 0.4, 0.5, 0.6, 0.7, 0.8, 0.9, 1, 1.25, 1.5,
@@ -25,7 +25,7 @@ function App() {
         setElementPosition={setElementPosition}
         elementWidth={elementWidth}
       />
-      <Main
+      <Body
         scale={scale}
         elementPosition={elementPosition}
         setElementPosition={setElementPosition}
