@@ -1,5 +1,5 @@
 import "./App.css";
-import Head from "./components/Head/Head";
+import Header from "./components/Header/Header";
 import Main from "./components/Main/Main";
 import { useState } from "react";
 import { Position } from "./components/Main/types";
@@ -18,7 +18,7 @@ function App() {
 
   return (
     <div className="App">
-      <Head
+      <Header
         scale={scale}
         setScale={setScale}
         scaleVars={scaleVars}
