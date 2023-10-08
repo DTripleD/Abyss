@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from "react";
 import styles from "./categories.module.scss";
-import tick from "../../images/tick.png";
-import edit from "../../images/something.png";
 import { vars, categoriesInterface } from "./types";
 import Popup from "../Popup/Popup";
 import icons from "../../images/icons.svg";
@@ -103,7 +101,9 @@ const SubCategory: React.FC<SubCategoryProps> = ({
                   className={styles.add}
                   onClick={() => changeSybCategoryType(subCategory.id)}
                 >
-                  <img src={tick} alt="ok" />
+                  <svg width="15" height="15">
+                    <use href={icons + "#checkmark"}></use>
+                  </svg>
                 </button>
               </div>
 
@@ -149,14 +149,16 @@ const SubCategory: React.FC<SubCategoryProps> = ({
                   }}
                 >
                   <svg width="15" height="15">
-                    <use href={icons + "#icon-arrow-left"}></use>
+                    <use href={icons + "#icon-plus"}></use>
                   </svg>
                 </button>
                 <button
                   className={styles.add}
                   onClick={() => changeSybCategoryType(subCategory.id)}
                 >
-                  <img src={edit} alt="edit" />
+                  <svg width="15" height="15">
+                    <use href={icons + "#icon-pencil"}></use>
+                  </svg>
                 </button>
 
                 <button

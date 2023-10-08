@@ -1,7 +1,5 @@
 import React, { useState } from "react";
 import styles from "./Categories.module.scss";
-import tick from "../../images/tick.png";
-import edit from "../../images/something.png";
 import SubCategory from "./SubCategory";
 import { vars, categoriesInterface } from "./types";
 import Popup from "../Popup/Popup";
@@ -216,7 +214,9 @@ const Categories: React.FC<CategoriesProps> = ({
                     className={styles.add}
                     onClick={() => changeType(category.id)}
                   >
-                    <img src={tick} alt="ok" />
+                    <svg width="15" height="15">
+                      <use href={icons + "#checkmark"}></use>
+                    </svg>
                   </button>
                 </div>
                 {category.subCategories?.length ? (
@@ -261,7 +261,9 @@ const Categories: React.FC<CategoriesProps> = ({
                     className={styles.add}
                     onClick={() => changeType(category.id)}
                   >
-                    <img src={edit} alt="edit" />
+                    <svg width="15" height="15">
+                      <use href={icons + "#icon-pencil"}></use>
+                    </svg>
                   </button>
 
                   <button

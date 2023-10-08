@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import styles from "./Head.module.scss";
-import tick2 from "../../images/tick2.png";
 import { Position } from "../Main/types";
 import icons from "../../images/icons.svg";
 
@@ -98,7 +97,11 @@ const Head: React.FC<HeadProps> = ({
                   }}
                 >
                   <p>{el * 100}%</p>
-                  {scale === el ? <img src={tick2} alt="selected" /> : null}
+                  {scale === el ? (
+                    <svg width="15" height="15">
+                      <use href={icons + "#selected"}></use>
+                    </svg>
+                  ) : null}
                 </button>
               ))}
             </div>
